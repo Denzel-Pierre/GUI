@@ -1,0 +1,95 @@
+/*
+File: /usr/cs/undergrad/2017/dpierre/public_html/Assignment_4.css
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 4: Redo Your First Webpage
+*/
+
+body {
+  background-image: url(fiber.png);
+  /* Copyright under Creative Commons to Badhon Ebrahim @ Subtle Patterns - http://subtlepatterns.com/graphcoders-lil-fiber/
+    */
+}
+
+#logo {
+  float: right;
+}
+
+.button {
+  background-color: #4CAF50;
+  /*Green */
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+/*To mark a button as "not available"*/
+
+.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.special {
+  background-color: red
+}
+
+#in-class {
+  margin-top: 50px;
+}
+
+
+/*Changes all table settings*/
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+
+/*Changes settings to table's header and details*/
+
+th,
+td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/*Changes the first row to a specific color*/
+
+th {
+  background-color: #4CAF50;
+  /*Green*/
+  color: white;
+}
+
+
+/*To change a row's appearance when the mouse hovers over the row*/
+
+tr:hover {
+  background-color: greenyellow;
+}
+
+#notes {
+  font-style: italic;
+}
+
+a:link.contact {
+  text-decoration: none;
+  color: blue;
+  font-family: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+  font-family: sans-serif;
+}
