@@ -29,12 +29,12 @@ body{
 
 /*To mark a button as "not available"*/
 .disabled{
-    opacity: 0.6;
+    opacity: 0.4;
     cursor: not-allowed;
 }
 
 .special{
-    background-color: red;
+    background-color: red
 }
 
 #in-class{
@@ -69,7 +69,14 @@ tr:hover{
     font-style: italic;
 }
 
+a:link.contact{
+  text-decoration: none;
+  color: blue;
+  font-family: inherit;
+}
+
 a:link, a:visited{
     text-decoration: none;
     color: white;
+    font-family: sans-serif;
 }
