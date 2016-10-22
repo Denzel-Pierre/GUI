@@ -1,0 +1,41 @@
+/*
+File: /usr/cs/undergrad/2017/dpierre/public_html/index.css
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+In-Class Assignment
+COMP 4610-201 - GUI Programming I
+*/
+body{ /*Change the background and the text*/
+    font-size: 80%;
+    font-family: "Courier New", Courier, monospace;
+    letter-spacing: 0.15em;
+    background-color: white;
+}
+#page{ /*Change the contents of the page*/
+    text-align: center;
+    border-style: double;
+    padding: 20px, 20px, 20px, 20px;
+    min-width: 720px;
+    max-width: 920px;
+    margin: auto;
+}
+li{ /*Change the list*/
+    text-transform: uppercase;
+    display: inline;
+    padding: 6px 18px 5px 18px;
+}
+a{ /*Change any links*/
+    text-decoration: none;
+    color: black;
+}
+a:hover{ /*change any links when hovered*/
+    color: red;
+}
+#navigation{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+p{
+    width: 600px;
+    margin: auto;
+}

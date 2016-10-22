@@ -1,0 +1,379 @@
+<!--
+
+  Story of the Year: "The Black Swan"
+  Denzel Pierre, Denzel_Pierre@student.uml.edu
+  September 20, 2015
+  source:  http://musicbrainz.org/ws/2/release/4ffe38e4-878a-469f-90cd-fc11dd0566b3?inc=aliases%2Bartist-credits%2Bdiscids%2Blabels%2Brecordings
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata xmlns="http://musicbrainz.org/ns/mmd-2.0#">
+   <recording id="3fe4263f-db7d-47e5-8afb-0a90e52ec56a">
+      <title>A Little Faster</title>
+      <length>184000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="4">
+         <release id="a3dacc65-c259-4d97-99b9-0ec7f2f397cf">
+            <title>Hopelessly Devoted to You, Volume 7</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+                     <name>Various Artists</name>
+                     <sort-name>Various Artists</sort-name>
+                     <disambiguation>add compilations to this artist</disambiguation>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-30</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-30</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+         <release id="a9ca19d2-3233-4f04-a2ad-66f449f9257f">
+            <title>Rock Sound 134 Bugging Your Ears</title>
+            <status>Promotion</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+                     <name>Various Artists</name>
+                     <sort-name>Various Artists</sort-name>
+                     <disambiguation>add compilations to this artist</disambiguation>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2010</date>
+            <country>GB</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2010</date>
+                  <area id="8a754a16-0027-3a29-b6d7-2b40ea0481ed">
+                     <name>United Kingdom</name>
+                     <sort-name>United Kingdom</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>GB</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+            <barcode/>
+         </release>
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+         <release id="d733d364-4be5-4955-bde8-29dfb0b3b8c0">
+            <title>Vans Warped Tour: 2009 Tour Compilation</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <packaging>Jewel Case</packaging>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="89ad4ac3-39f7-470e-963a-56509c546377">
+                     <name>Various Artists</name>
+                     <sort-name>Various Artists</sort-name>
+                     <disambiguation>add compilations to this artist</disambiguation>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+            <barcode>603967138726</barcode>
+         </release>
+      </release-list>
+   </recording>
+   <recording id="78329235-463c-49b0-b32f-f8af98cc3599">
+      <title>Wish You Away</title>
+      <length>220000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="1">
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+      </release-list>
+   </recording>
+   <recording id="3889deb8-8e48-4f57-9585-03cc2324938c">
+      <title>Remedy</title>
+      <length>216000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="1">
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+      </release-list>
+   </recording>
+   <recording id="25674518-0530-4968-94a8-78f5ce856b5f">
+      <title>Just in Time</title>
+      <length>215000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="1">
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+      </release-list>
+   </recording>
+   <recording id="ffb354b3-3893-4f84-811a-0eff5d0f69a9">
+      <title>Stories</title>
+      <length>185000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="1">
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+      </release-list>
+   </recording>
+   <recording id="0f9ed286-c35a-4419-99a3-5564bb39fc92">
+      <title>The World Calling</title>
+      <length>281000</length>
+      <artist-credit>
+         <name-credit>
+            <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+               <name>There for Tomorrow</name>
+               <sort-name>There for Tomorrow</sort-name>
+            </artist>
+         </name-credit>
+      </artist-credit>
+      <release-list count="1">
+         <release id="bef01324-dd9e-4608-9726-781d68fc26fb">
+            <title>A Little Faster</title>
+            <status>Official</status>
+            <quality>normal</quality>
+            <text-representation>
+               <language>eng</language>
+               <script>Latn</script>
+            </text-representation>
+            <artist-credit>
+               <name-credit>
+                  <artist id="6a8de993-ffd5-414d-a81a-88e11e27d01a">
+                     <name>There for Tomorrow</name>
+                     <sort-name>There for Tomorrow</sort-name>
+                  </artist>
+               </name-credit>
+            </artist-credit>
+            <date>2009-06-09</date>
+            <country>US</country>
+            <release-event-list count="1">
+               <release-event>
+                  <date>2009-06-09</date>
+                  <area id="489ce91b-6658-3307-9877-795b68554c98">
+                     <name>United States</name>
+                     <sort-name>United States</sort-name>
+                     <iso-3166-1-code-list>
+                        <iso-3166-1-code>US</iso-3166-1-code>
+                     </iso-3166-1-code-list>
+                  </area>
+               </release-event>
+            </release-event-list>
+         </release>
+      </release-list>
+   </recording>   
+</metadata>
