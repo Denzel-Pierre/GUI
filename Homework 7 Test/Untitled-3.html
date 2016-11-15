@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+   <link rel="stylesheet" href="style.css" />
+   <script src="jquery-validation-1.15.0/lib/jquery.js"></script>
+   <script src="jquery-validation-1.15.0/dist/jquery.validate.js"></script>
+
+</head>
+
+<body>
+   <h1>Multiplication Table</h1>
+   <h4><i>Notes:</i></h4>
+   <ul>
+      <li>Only enter Integers; Decimal digits will be ignored.</li>
+      <li>Negative Integers <i>are</i> allowed.</li>
+      <li> Integers that are backward (Starting Number > Ending Number) will be automatically switched.</li>
+      <li>Extremely large ranges (>200) will take longer for the browser to load, and may potentially time out or crash.</li>
+   </ul>
+
+   <form id="numberForm">
+      <div>
+         <label for="Horizontal_Bottom">Horizontal Starting Number:</label>
+         <input type="number" name="Horizontal_Bottom" id="Horizontal_Bottom" placeholder="Enter an Integer" required>
+      </div>
+      <div>
+         <label for="Horizontal_Top">Horizontal Ending Number:</label>
+         <input type="number" name="Horizontal_Top" id="Horizontal_Top" placeholder="Enter an Integer" required>
+      </div>
+      <div>
+         <label for="Vertical_Bottom">Vertical Starting Number:</label>
+         <input type="number" name="Vertical_Bottom" id="Vertical_Bottom" placeholder="Enter an Integer" required>
+      </div>
+      <div>
+         <label for="Vertical_Top">Vertical Ending Number:</label>
+         <input type="number" name="Vertical_Top" id="Vertical_Top" placeholder="Enter an Integer" required>
+      </div>
+      <div>
+         <input type="button" id="submit" value="Submit" />
+      </div>
+   </form>
+
+   <script>
+      $(document).ready(function() {
+         alert("Doc made it here");
+         $("#numberForm").validate();
+         alert("Doc made it here too");
+      });
+
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+File: Homework_7/HW7.html
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 7: Using the jQuery Validation Plugin with Your Dynamic Table
+Created on 20 October 2016, 11:00PM
+Updated on 20 October 2016, 12:55AM - Added Bootstrap form
+Updated on 21 October 2016, 12:33PM - Added basic Javascript functionality
+Updated on 21 October 2016, 11:39PM - Completed Basic Functionality
+Updated on 27 October 2016, 07:09PM - Added Higher Form Functionality
+Updated on 01 November 2016, 02:25PM - Added Jumbotron
+Updated on 03 November 2016, 09:09PM - Updated page to reflect Event Listeners
+-->
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <!--Tells IE to display the webpage in the highest mode available-->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!--To ensure proper rendering and touch zooming-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Assignment 6</title>
+
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="style.css" />
+   <script src="jquery-validation-1.15.0/lib/jquery.js"></script>
+   <script src="jquery-validation-1.15.0/dist/jquery.validate.js"></script>
+   
+
+   
+</head>
+
+<body>
+   <div class="jumbotron">
+      <div class="container">
+         <h1>Multiplication Table</h1>
+         <h4><i>Notes:</i></h4>
+         <ul>
+            <li>Only enter Integers; Decimal digits will be ignored.</li>
+            <li>Negative Integers <i>are</i> allowed.</li>
+            <li> Integers that are backward (Starting Number > Ending Number) will be automatically switched.</li>
+            <li>Extremely large ranges (>200) will take longer for the browser to load, and may potentially time out or crash.</li>
+         </ul>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-6 col-md-push-3">
+            <form class="form-horizontal" id="numberForm">
+               <div class="form-group">
+                  <label class="control-label col-sm-6" for="Horizontal_Bottom">Horizontal Starting Number:</label>
+                  <div class="col-sm-6">
+                     <input type="number" class="form-control" name="Horizontal_Bottom" id="Horizontal_Bottom" placeholder="Enter an Integer" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-sm-6" for="Horizontal_Top">Horizontal Ending Number:</label>
+                  <div class="col-sm-6">
+                     <input type="number" class="form-control" name="Horizontal_Top" id="Horizontal_Top" placeholder="Enter an Integer" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-sm-6" for="Vertical_Bottom">Vertical Starting Number:</label>
+                  <div class="col-sm-6">
+                     <input type="number" class="form-control" name="Vertical_Bottom" id="Vertical_Bottom" placeholder="Enter an Integer" required>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-sm-6" for="Vertical_Top">Vertical Ending Number:</label>
+                  <div class="col-sm-6">
+                     <input type="number" class="form-control" name="Vertical_Top" id="Vertical_Top" placeholder="Enter an Integer" required>
+                  </div>
+               </div>
+               <div class="col-sm-1 col-sm-push-5">
+                  <input type="button" class="btn btn-info" id="submit" value="Submit" />
+               </div>
+            </form>
+         </div>
+      </div>
+
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+   <!-- JavaScript -->
+   
+  <script>
+      $(document).ready(function() {
+         alert("Doc made it here");
+         $("#numberForm").validate();
+         alert("Doc made it here too");
+      });
+
+   </script>
+</body>
+
+</html>
