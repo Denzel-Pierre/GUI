@@ -30,40 +30,19 @@ function validateForm() {
    var v_start = parseInt(v_bottom_element.value, 10);
    var v_end = parseInt(v_top_element.value, 10);
 
-   /*var isInvalid = false;
 
-   // If any of the 4 variables are not numbers, make the input red to show it is invalid.
-   if (isNaN(h_start)) {
-      h_bottom_element.style.backgroundColor = "#ffbbbb";
-      isInvalid = true;
-   }
-
-   if (isNaN(h_end)) {
-      h_top_element.style.backgroundColor = "#ffbbbb";
-      isInvalid = true;
-   }
-
-   if (isNaN(v_start)) {
-      v_bottom_element.style.backgroundColor = "#ffbbbb";
-      isInvalid = true;
-   }
-
-   if (isNaN(v_end)) {
-      v_top_element.style.backgroundColor = "#ffbbbb";
-      isInvalid = true;
-   }
-
-   if (isInvalid) {
-      alert("Fill all required labels correctly.");
-      return;
-   }*/
-
+   $("p").remove();
+   
    //If Horizontal Numbers are backwards, switch them
    if (h_start > h_end) {
       var h_switch = switchIntegers(h_start, h_end);
       h_start = h_switch[0];
       h_end = h_switch[1];
-      alert("Your Starting Horizontal Number was larger than your Ending Horizontal Number, so I switched them automatically.");
+      
+      $(".jumbotron").after("<p><b>Your Starting Horizontal Number was larger than your Ending Horizontal Number, so I switched them automatically.</b></p>")
+      
+      
+/*      alert("Your Starting Horizontal Number was larger than your Ending Horizontal Number, so I switched them automatically.");*/
    }
 
    //If Vertical Numbers are backwards, switch them
@@ -71,7 +50,10 @@ function validateForm() {
       var v_switch = switchIntegers(v_start, v_end);
       v_start = v_switch[0];
       v_end = v_switch[1];
-      alert("Your Starting Vertical Number was larger than your Ending Vertical Number, so I switched them automatically.");
+      
+      $(".jumbotron").after("<p><b>Your Starting Vertical Number was larger than your Ending Vertical Number, so I switched them automatically.</b></p>")
+      /*
+      alert("Your Starting Vertical Number was larger than your Ending Vertical Number, so I switched them automatically.");*/
    }
 
    setupTable(h_start, h_end, v_start, v_end);

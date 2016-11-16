@@ -66,3 +66,11 @@ td:nth-child(1) {
 tr:hover {
    background-color: greenyellow;
 }
+
+input.error{
+   background-color: #ffbbbb
+}
+
+p {
+    text-align: center;
+}

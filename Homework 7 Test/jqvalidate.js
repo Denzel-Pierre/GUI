@@ -1,5 +1,6 @@
- $(document).ready(function() {
-         //alert("Doc made it here");
-         $("#numberForm").validate();
-         //alert("Doc made it here too");
-      });
+$(document).ready(function () {
+   $("#numberForm").validate();
+   $("#submit").click(function () {
+      $("#numberForm").valid();
+   })
+});
