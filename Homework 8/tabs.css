@@ -1,0 +1,35 @@
+/*File: Homework_8/tabs.css
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 8: Using the jQuery UI Slider and Tab Widgets 
+Created on 22 November 2016, 8:30PM
+*/
+
+ #dialog label,
+      #dialog input {
+         display: block;
+      }
+      
+      #dialog label {
+         margin-top: 0.5em;
+      }
+      
+      #dialog input,
+      #dialog textarea {
+         width: 95%;
+      }
+      
+      #tabs {
+         margin-top: 1em;
+      }
+      
+      #tabs li .ui-icon-close {
+         float: left;
+         margin: 0.4em 0.2em 0 0;
+         cursor: pointer;
+      }
+      
+      #add_tab {
+         cursor: pointer;
+      }

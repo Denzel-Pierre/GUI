@@ -1,0 +1,96 @@
+/*File: Homework 8/style.css
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 6: Creating an Interactive Dynamic Table
+Created on 21 October 2016, 12:30PM
+Updated on 21 October 2016, 12:33PM - Integrated Javascript file with HTML
+Updated on 21 October 2016, 11:39PM - Completed Basic Functionality
+Updated on 03 November 2016, 01:59PM - Added domTable functionality
+Updated on 15 November 2016, 11:40PM - Added Error functionality
+*/
+
+body {
+   background-image: url(fiber.png);
+   /* Copyright under Creative Commons to Badhon Ebrahim @ Subtle Patterns - http://subtlepatterns.com/graphcoders-lil-fiber/
+    */
+}
+
+h1,
+h4 {
+   text-align: center;
+}
+
+
+/*Changes all table settings*/
+
+table {
+   border-collapse: collapse;
+   width: 100%
+}
+
+/*#domTable {
+   height: 50em;
+   overflow-x: auto;
+   overflow-y: auto;
+}*/
+
+
+.domTable {
+   max-height: 50em;
+   overflow-x: auto;
+   overflow-y: auto;
+}
+
+
+/*Changes settings to table's header and details*/
+
+th,
+td {
+   padding: 8px;
+   text-align: center;
+   border: 1px solid #ddd;
+}
+
+
+/*Changes the first row to a specific color*/
+
+th {
+   background-color: #4CAF50;
+   /*Green*/
+   color: white;
+}
+
+
+/*Changes the first cell of every row.*/
+
+td:nth-child(1) {
+   background-color: #4CAF50;
+   /*Green*/
+   color: white;
+}
+
+
+/*To change a row's appearance when the mouse hovers over the row*/
+
+tr:hover {
+   background-color: greenyellow;
+}
+
+/* Changes borders for errors */
+
+input{
+   background-color: white
+}
+
+input.error{
+   background-color: #ffbbbb
+}
+
+p {
+    text-align: center;
+}
+
+#div_submit {
+   padding: 1em;
+}
