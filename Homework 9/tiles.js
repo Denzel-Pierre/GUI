@@ -247,8 +247,3 @@ for (i = 0; i < tile_list.length; i++) {
    tile_DOM.appendChild(new_img);
    //document.body.appendChild(tile_DOM);
 }
-
-/*alert("Made it here");
-var result = $.grep(tile_list, function(e){return e.id === "tile_Z";});
-alert("Got it");
-alert(result[0].point_value);*/

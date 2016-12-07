@@ -25,20 +25,13 @@ for (k = 0; k < bag_length; k++) {
 
 for (h = 0; h < rand_tile_list.length; h++) {
    var rand_tile_DOM = document.createElement("div");
-   alert("listid is " + rand_tile_list[h].id);
    rand_tile_DOM.id = rand_tile_list[h].id;
-   alert("Got here1");
    rand_tile_DOM.className = "tile";
-   alert("Got here2");
    var new_img = document.createElement("img");
-   alert("Got here3");
    new_img.src = rand_tile_list[h].src;
-   alert("Got here4");
 
    rand_tile_DOM.appendChild(new_img);
-    alert("Got here5");
    document.body.appendChild(rand_tile_DOM);
-    alert("Got here6");
 }
 
 $("#chessBoard").after($bag);
@@ -65,19 +58,12 @@ function addTile() {
    var new_tile = getRandTile();
    
    var new_rand_tile_DOM = document.createElement("div");
-   alert("listid is " + new_tile.id);
    new_rand_tile_DOM.id = new_tile.id;
-   alert("Got here1");
    new_rand_tile_DOM.className = "tile";
-   alert("Got here2");
    var new_img = document.createElement("img");
-   alert("Got here3");
    new_img.src = rand_tile.src;
-   alert("Got here4");
-
+   
    new_rand_tile_DOM.appendChild(new_img);
-    alert("Got here5");
    document.body.appendChild(new_rand_tile_DOM);
-    alert("Got here6");
    
 }

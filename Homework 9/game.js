@@ -17,7 +17,6 @@ function getTile(id_name) {
    var result = $.grep(tile_list, function (e) {
       return e.id === id_name;
    });
-   alert("You got " + result[0].letter);
    return result[0];
 }
 
@@ -38,7 +37,6 @@ var word = [];
 function checkTurn($dragTile, $dropTile, event, ui) {
    if (first_step === true) {
       if ($dropTile.attr("id") !== "8-8") {
-         alert("Can only start on the star!");
          ui.draggable.draggable('option', 'revert', true);
       } else {
          first_step = false;
@@ -49,8 +47,6 @@ function checkTurn($dragTile, $dropTile, event, ui) {
          played_tiles.push(getTile($dragTile.attr("id")));
          played_spots.push($dropTile.attr("id"));
          addScore($dragTile, $dropTile, event, ui);
-         alert(played_tiles[0].letter);
-         alert(played_spots[0]);
          word.push(played_tiles[played_tiles.length - 1].letter);
          recordSpot($dragTile, $dropTile);
          $("#word").text("Word: " + word[0]);
@@ -59,7 +55,6 @@ function checkTurn($dragTile, $dropTile, event, ui) {
    } else {
       allowedSpots($dropTile, $last_drop_pos, event, ui);
       if (error === true) {
-         alert("error");
          error = false;
          $dropTile.droppable("enable");
          return;
@@ -71,7 +66,6 @@ function checkTurn($dragTile, $dropTile, event, ui) {
       played_tiles.push(getTile($dragTile.attr("id")));
       played_spots.push($dropTile.attr("id"));
       updateWord($dropTile, $dragTile, $last_drop_pos);
-      alert("Played tiles length is now " + played_tiles.length);
       addScore($dragTile, $dropTile, event, ui);
       recordSpot($dragTile, $dropTile);
       $last_drop_pos = $dropTile.attr("id");
@@ -80,7 +74,6 @@ function checkTurn($dragTile, $dropTile, event, ui) {
 }
 
 function allowedSpots($dropTile, $last_drop_pos, event, ui) {
-   alert("We got last drop pos and its " + $last_drop_pos);
    var $last_drop = findSpot($last_drop_pos);
    var allowed = [];
 
@@ -101,7 +94,6 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
 
 
       }
-      alert("allowed spots are " + allowed.toString());
    }
 
    if (played_tiles.length == 1) {
@@ -119,7 +111,6 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
          allowed.push(right_last_spot);
          allowed.push(down_last_spot);
 
-         alert("Right before where we want!");
          checkBeyondRight($last_drop, allowed);
          checkBeyondLeft($last_drop, allowed);
          checkBeyondUp($last_drop, allowed);
@@ -134,12 +125,10 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
             $("#word").text("Word: " + word_holder);
          }
 
-         alert("allowed spots are " + allowed.toString());
       }
    } else if (played_tiles.length >= 2) {
       findTileDifference();
       if (direction == "LR") {
-         alert("Only allowed Left-Right");
          // Credit to Brian Huisman for natural sorting algorithm - http://web.archive.org/web/20130826203933/http://my.opera.com/GreyWyvern/blog/show.dml/1671288
          played_spots.sort(function alphanum(a, b) {
             function chunkify(t) {
@@ -174,13 +163,10 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
             }
             return aa.length - bb.length;
          });
-         alert("Played spots are " + played_spots.toString());
          var left_spot = left(findSpot(played_spots[0]));
          var right_spot = right(findSpot(played_spots[played_spots.length - 1]));
          allowed.push(left_spot, right_spot);
-         alert("allowed spots are " + allowed.toString());
       } else if (direction == "TB") {
-         alert("Only allowed Top-Bottom");
          played_spots.sort(function alphanum(a, b) {
             function chunkify(t) {
                var tz = [],
@@ -214,20 +200,15 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
             }
             return aa.length - bb.length;
          });
-         alert("Played spots are " + played_spots.toString());
          var top_spot = up(findSpot(played_spots[0]));
          var bottom_spot = down(findSpot(played_spots[played_spots.length - 1]));
          allowed.push(top_spot, bottom_spot);
-         alert("allowed spots are " + allowed.toString());
       }
    }
 
    var found_allowed = (allowed.indexOf($dropTile.attr("id")) > -1);
 
-   if (found_allowed === true) {
-      alert("Yay " + $dropTile.attr("id") + " matches " + allowed.toString());
-   } else {
-      alert("Huh, you didn't match. You sure it's not " + allowed.toString() + "? I mean you have " + $dropTile.attr("id"));
+   if (found_allowed === true) {} else {
       ui.draggable.draggable('option', 'revert', true);
       error = true;
    }
@@ -236,8 +217,6 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
 function findTileDifference() {
    var spot1 = played_spots[played_spots.length - 2];
    var spot2 = played_spots[played_spots.length - 1];
-   alert("Spot 1 is " + spot1);
-   alert("Spot 2 is " + spot2);
 
    var spot1_y = spot1.substring(0, spot1.indexOf("-"));
    var spot1_x = spot1.substring(spot1.indexOf("-") + 1);
@@ -246,10 +225,8 @@ function findTileDifference() {
    var spot2_x = spot2.substring(spot2.indexOf("-") + 1);
 
    if (spot1_x != spot2_x) {
-      alert("Reading from Left to Right");
       direction = "LR";
    } else if (spot1_y != spot2_y) {
-      alert("Reading from Top to Bottom");
       direction = "TB";
    }
 
@@ -327,13 +304,10 @@ function updateScore() {
    var score_multiplier = 1;
 
    for (i = 0; i < used_tiles.length; i++) {
-      alert("Current used tile is " + used_tiles[i].spot);
       spot_holder = findSpot(used_tiles[i].spot);
       if (spot_holder.hasClass("triple_word")) {
-         alert("Triple Bonus!");
          score_multiplier = score_multiplier * 3;
       } else if (spot_holder.hasClass("double_word")) {
-         alert("Double Bonus!");
          score_multiplier = score_multiplier * 2;
       }
    }
@@ -344,8 +318,6 @@ function updateScore() {
 }
 
 function updateWord($dropTile, $dragTile, $last_drop_pos) {
-   /*   var message = "Up of " + $last_drop_pos + "is " + up($("#" + $last_drop_pos));
-      alert(message);*/
 
    if (parseInt(getTileY($dropTile.attr("id"))) < parseInt(getTileY($last_drop_pos)) || parseInt(getTileX($dropTile.attr("id"))) < parseInt(getTileX($last_drop_pos))) {
       word.unshift(played_tiles[played_tiles.length - 1].letter);
@@ -388,7 +360,6 @@ function recordSpot($dragTile, $dropTile) {
 }
 
 function endTurn() {
-   alert("We're in EndTurn!");
    updateScore();
 
    $("#total_score").text("Total Score: " + total_score);
@@ -403,24 +374,16 @@ function endTurn() {
 }
 
 function checkBeyondRight($last_drop, allowed) {
-   alert("We made it to CheckBeyond");
-   alert("Last drop id is " + $last_drop.attr("id"));
-
-   alert((right($last_drop)));
    var result = $.grep(used_tiles, function (e) {
       return e.spot === (right($last_drop));
    });
-   alert("Made it past the find!");
 
    if (result.length > 0) {
-      alert("Got a result!" + result[0].spot);
       checkBeyondRight(findSpot(right($last_drop)), allowed);
       var temp = findSpot(result[0].spot);
       alt_word_holder.unshift(getTile(result[0].tile).letter);
-      alert("We pushed!");
       allowed.push(right(temp));
    }
-   alert("Nope, no results");
    return;
 }
 
@@ -467,6 +430,5 @@ function checkBeyondDown($last_drop, allowed) {
 }
 
 document.getElementById("End_Turn").addEventListener("click", function () {
-   alert("Hello World");
    endTurn();
 });

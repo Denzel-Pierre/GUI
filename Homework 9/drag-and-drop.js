@@ -51,7 +51,6 @@ Created on 06 November 2016, 10:52PM
             drop: function(event, ui) {
                var $dragTile = ui.draggable;
                var $dropTile = $(this);
-               alert("This is " + $dragTile.attr("id") + " Dropped in " + $dropTile.attr("id"));
                checkTurn($dragTile, $dropTile, event, ui);
             }
          });
