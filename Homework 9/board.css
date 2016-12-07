@@ -1,0 +1,128 @@
+/*
+File: Homework 9/board.css
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
+Created on 01 December 2016, 2:04PM
+Updated on 01 December 2016, 7:55PM - Finished Board Design
+Updated on 04 December 2016, 7:58PM - Quickly added Starting Star
+*/
+
+
+/*Credit goes to StackOverflow user Vitim.us for original idea:
+http://stackoverflow.com/a/18690381*/
+
+img {
+   width: 45px;
+   height: 45px;
+}
+
+.tile {
+   max-height: 180px;
+   max-width: 165px;
+   display: inline-block
+}
+
+#chessBoard {
+   display: inline-block;
+   border: 2px outset lightGray;
+}
+
+#chessBoard div {
+   line-height: 1px;
+   border: 1px dotted black;
+}
+
+#chessBoard span {
+   display: inline-block;
+   width: 45px;
+   height: 45px;
+   border: 1px dotted black;
+}
+
+#chessBoard div:nth-child(odd) span:nth-child(even),
+#chessBoard div:nth-child(even) span:nth-child(odd) {
+   background-color: antiquewhite;
+}
+
+#chessBoard div:nth-child(even) span:nth-child(even),
+#chessBoard div:nth-child(odd) span:nth-child(odd) {
+   background-color: antiquewhite;
+}
+
+#chessBoard div:nth-child(1) span:nth-child(4),
+#chessBoard div:nth-child(1) span:nth-last-child(4),
+#chessBoard div:nth-child(3) span:nth-child(7),
+#chessBoard div:nth-child(3) span:nth-last-child(7),
+#chessBoard div:nth-child(4) span:nth-child(7n+1),
+#chessBoard div:nth-child(7) span:nth-child(3),
+#chessBoard div:nth-child(7) span:nth-last-child(3),
+#chessBoard div:nth-child(7) span:nth-child(7),
+#chessBoard div:nth-child(7) span:nth-last-child(7),
+#chessBoard div:nth-child(8) span:nth-child(4),
+#chessBoard div:nth-child(8) span:nth-last-child(4),
+#chessBoard div:nth-last-child(1) span:nth-child(4),
+#chessBoard div:nth-last-child(1) span:nth-last-child(4),
+#chessBoard div:nth-last-child(3) span:nth-child(7),
+#chessBoard div:nth-last-child(3) span:nth-last-child(7),
+#chessBoard div:nth-last-child(4) span:nth-child(7n+1),
+#chessBoard div:nth-last-child(7) span:nth-child(3),
+#chessBoard div:nth-last-child(7) span:nth-last-child(3),
+#chessBoard div:nth-last-child(7) span:nth-child(7),
+#chessBoard div:nth-last-child(7) span:nth-last-child(7) {
+   background-image: url("Bonus_Spots/double-letter-score.png");
+   background-size: contain;
+  /* background-color: cyan;*/
+}
+
+#chessBoard div:nth-child(1) span:nth-child(7n+1),
+#chessBoard div:nth-child(8) span:nth-child(1),
+#chessBoard div:nth-child(8) span:nth-last-child(1),
+#chessBoard div:nth-last-child(1) span:nth-child(7n+1) {
+   background-image: url("Bonus_Spots/triple-word-score.png");
+   background-size: contain;
+}
+
+#chessBoard div:nth-child(2) span:nth-child(2),
+#chessBoard div:nth-child(2) span:nth-last-child(2),
+#chessBoard div:nth-child(3) span:nth-child(3),
+#chessBoard div:nth-child(3) span:nth-last-child(3),
+#chessBoard div:nth-child(4) span:nth-child(4),
+#chessBoard div:nth-child(4) span:nth-last-child(4),
+#chessBoard div:nth-child(5) span:nth-child(5),
+#chessBoard div:nth-child(5) span:nth-last-child(5),
+#chessBoard div:nth-last-child(5) span:nth-child(5),
+#chessBoard div:nth-last-child(5) span:nth-last-child(5),
+#chessBoard div:nth-last-child(4) span:nth-child(4),
+#chessBoard div:nth-last-child(4) span:nth-last-child(4),
+#chessBoard div:nth-last-child(3) span:nth-child(3),
+#chessBoard div:nth-last-child(3) span:nth-last-child(3),
+#chessBoard div:nth-last-child(2) span:nth-child(2),
+#chessBoard div:nth-last-child(2) span:nth-last-child(2) {
+   background-image: url("Bonus_Spots/double-word-score.png");
+   background-size: contain;
+   background-color: pink;
+}
+
+#chessBoard div:nth-child(2) span:nth-child(6),
+#chessBoard div:nth-child(2) span:nth-last-child(6),
+#chessBoard div:nth-child(6) span:nth-child(2),
+#chessBoard div:nth-child(6) span:nth-last-child(2),
+#chessBoard div:nth-child(6) span:nth-child(6),
+#chessBoard div:nth-child(6) span:nth-last-child(6),
+#chessBoard div:nth-last-child(2) span:nth-child(6),
+#chessBoard div:nth-last-child(2) span:nth-last-child(6),
+#chessBoard div:nth-last-child(6) span:nth-child(2),
+#chessBoard div:nth-last-child(6) span:nth-last-child(2),
+#chessBoard div:nth-last-child(6) span:nth-child(6),
+#chessBoard div:nth-last-child(6) span:nth-last-child(6) {
+   background-image: url("Bonus_Spots/triple-letter-score.png");
+   background-size: contain;
+   background-color: blue;
+}
+
+#chessBoard div:nth-child(8) span:nth-child(8) {
+   background-image: url(Bonus_Spots/start-star.png);
+   background-size: contain;
+}
