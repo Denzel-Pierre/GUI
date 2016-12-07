@@ -7,6 +7,7 @@ Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
 Created on 06 November 2016, 06:52PM
 */
 
+//Set up Bag
 var $bag = $("<div id='bag'><em>Rack:</em></div>");
 
 var k = 0;
@@ -16,7 +17,7 @@ var rand_tile_list = [];
 
 
 
-
+//Push all randomized tiles to an array.
 for (k = 0; k < bag_length; k++) {
    
    var rand_tile = getRandTile();
@@ -36,6 +37,7 @@ for (h = 0; h < rand_tile_list.length; h++) {
 
 $("#chessBoard").after($bag);
 
+//Pulls a random tile from the bag
 function getRandTile() {
 
    if(tile_list.length > 0) {
@@ -54,6 +56,7 @@ function getRandTile() {
       }
 }
 
+//Forcibly adds one random tile from the bag to the rack.
 function addTile() {
    var new_tile = getRandTile();
    

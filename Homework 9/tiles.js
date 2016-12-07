@@ -231,6 +231,7 @@ var tile_list = [tile_A, tile_B, tile_C, tile_D, tile_E, tile_F, tile_G, tile_H,
 
 var i = 0;
 
+//Set up the base of every tile.
 for (i = 0; i < tile_list.length; i++) {
 /*
    var new_img = document.createElement("img");

@@ -2,6 +2,7 @@ $(document).ready(function () {
    setupTable();
 });
 
+//Create Table divs
 function setupTable() {
    var $total_score = $("<p id='total_score'>Total Score: " + total_score + "</p>");
    $("#game-info").prepend($total_score);
@@ -13,6 +14,7 @@ function setupTable() {
    $("#game-info").append($word);
 }
 
+//Get a Tile via its id
 function getTile(id_name) {
    var result = $.grep(tile_list, function (e) {
       return e.id === id_name;
@@ -20,23 +22,24 @@ function getTile(id_name) {
    return result[0];
 }
 
-var first_step = true;
-var first_turn = true;
-var new_turn = false;
-var $last_drop_pos = null;
-var played_tiles = [];
-var played_spots = [];
-var used_tiles = [];
-var alt_word_holder = [];
-var direction = null;
+var first_step = true; //Determines the very first tile being placed on the board
+var first_turn = true; //Determines the first turn of the game.
+var new_turn = false; //Determines the second+ turn of the game
+var $last_drop_pos = null; //Carries the position of the previous spot being used by a tile.
+var played_tiles = []; //Carries elements of every tile played this turn
+var played_spots = []; //Carries elements of every spot played this turn
+var used_tiles = []; //Carries elements of every spot and tile used this GAME
+var alt_word_holder = []; //Temp word holder
+var direction = null; //Determines the direction of the word tiles placed
 var error = false;
-var word_score = 0;
-var total_score = 0;
-var word = [];
+var word_score = 0; //Score of current word
+var total_score = 0; //Score of user
+var word = []; //Carries each letter.
 
+//Main action, makes actions depending on turn.
 function checkTurn($dragTile, $dropTile, event, ui) {
    if (first_step === true) {
-      if ($dropTile.attr("id") !== "8-8") {
+      if ($dropTile.attr("id") !== "8-8") {//If entered, the user did not place a tile on the starting star, revert the tile back.
          ui.draggable.draggable('option', 'revert', true);
       } else {
          first_step = false;
@@ -51,10 +54,11 @@ function checkTurn($dragTile, $dropTile, event, ui) {
          recordSpot($dragTile, $dropTile);
          $("#word").text("Word: " + word[0]);
          ui.draggable("disable");
+         addTile();
       }
    } else {
       allowedSpots($dropTile, $last_drop_pos, event, ui);
-      if (error === true) {
+      if (error === true) {//If entered, this is not an allowed spot, revert the tile back.
          error = false;
          $dropTile.droppable("enable");
          return;
@@ -70,9 +74,11 @@ function checkTurn($dragTile, $dropTile, event, ui) {
       recordSpot($dragTile, $dropTile);
       $last_drop_pos = $dropTile.attr("id");
       ui.draggable("disable");
+      addTile();
    }
 }
 
+//Determines the allowed spot just before the tile is dropped.
 function allowedSpots($dropTile, $last_drop_pos, event, ui) {
    var $last_drop = findSpot($last_drop_pos);
    var allowed = [];
@@ -82,11 +88,13 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
       new_turn = false;
 
       for (i = 0; i < used_tiles.length; i++) {
+         //Check around all positions, and make them allowed spots.
+         
          var up_current_spot = up(findSpot(used_tiles[i].spot));
          var left_current_spot = left(findSpot(used_tiles[i].spot));
          var right_current_spot = right(findSpot(used_tiles[i].spot));
          var down_current_spot = down(findSpot(used_tiles[i].spot));
-
+         
          allowed.push(up_current_spot);
          allowed.push(left_current_spot);
          allowed.push(right_current_spot);
@@ -98,9 +106,10 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
 
    if (played_tiles.length == 1) {
       if (first_turn === true) {
-         allowed.push("7-8", "9-8", "8-7", "8-9");
+         allowed.push("7-8", "9-8", "8-7", "8-9"); //After first tile, every spot around the star is allowed.
          first_turn = false;
       } else {
+         //Check around, make sure there are not other tiles placed, make allowed spots as necessary.
          var up_last_spot = up($last_drop);
          var left_last_spot = left($last_drop);
          var right_last_spot = right($last_drop);
@@ -116,7 +125,7 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
          checkBeyondUp($last_drop, allowed);
          checkBeyondUp($last_drop, allowed);
 
-         if (alt_word_holder.length > 0) {
+         if (alt_word_holder.length > 0) { //If we have an existing word_holder, that means we have an already existing tile connected to the current word. Push the letters in.
             var j = 0;
             for (j = 0; j < alt_word_holder.length; j++) {
                word.push(alt_word_holder[j]);
@@ -214,6 +223,7 @@ function allowedSpots($dropTile, $last_drop_pos, event, ui) {
    }
 }
 
+//Determines whether the user is going from Left-Right or from Top-Bottom
 function findTileDifference() {
    var spot1 = played_spots[played_spots.length - 2];
    var spot2 = played_spots[played_spots.length - 1];
@@ -232,6 +242,7 @@ function findTileDifference() {
 
 }
 
+//Gets the Spot left of the current spot, returns ID
 function left($dropTile) {
    var hold = $dropTile.attr("id");
    var hold_x = getTileX(hold);
@@ -244,6 +255,7 @@ function left($dropTile) {
    return answer;
 }
 
+//Gets the Spot right of the current spot, returns ID
 function right($dropTile) {
    var hold = $dropTile.attr("id");
    var hold_x = getTileX(hold);
@@ -256,6 +268,7 @@ function right($dropTile) {
    return answer;
 }
 
+//Gets the Spot Up of the current spot, returns ID
 function up($dropTile) {
    var hold = $dropTile.attr("id");
    var hold_x = getTileX(hold);
@@ -269,6 +282,7 @@ function up($dropTile) {
    return answer;
 }
 
+//Gets the Spot down of the current spot, returns ID
 function down($dropTile) {
    var hold = $dropTile.attr("id");
    var hold_x = getTileX(hold);
@@ -281,6 +295,7 @@ function down($dropTile) {
    return answer;
 }
 
+//Adds the score of each Tile, using bonus letter spots as necessary.
 function addScore($dragTile, $dropTile, event, ui) {
    var tile = getTile($dragTile.attr("id"));
 
@@ -298,6 +313,7 @@ function addScore($dragTile, $dropTile, event, ui) {
 
 }
 
+//Updates the score, using bonus WORD spots as necessary
 function updateScore() {
    var i = 0;
    var spot_holder = null;
@@ -317,6 +333,7 @@ function updateScore() {
 
 }
 
+//Adds the letter to the word array, depending if it should go before or after the current letter.
 function updateWord($dropTile, $dragTile, $last_drop_pos) {
 
    if (parseInt(getTileY($dropTile.attr("id"))) < parseInt(getTileY($last_drop_pos)) || parseInt(getTileX($dropTile.attr("id"))) < parseInt(getTileX($last_drop_pos))) {
@@ -329,24 +346,28 @@ function updateWord($dropTile, $dragTile, $last_drop_pos) {
    $("#word").text("Word: " + word_holder);
 }
 
+//Gets the X coordinate of a given Spot
 function getTileX(id_string) {
    var result = id_string.substring(id_string.indexOf("-") + 1);
 
    return result;
 }
 
+//Gets the Y coordinate of a given spot
 function getTileY(id_string) {
    var result = id_string.substring(0, id_string.indexOf("-"));
 
    return result;
 }
 
+//Finds the Spot via its id - returns $(#(coordinate))
 function findSpot(id_string) {
    var $result = $("#" + id_string);
 
    return $result;
 }
 
+//Adds the spot to the used_tiles array
 function recordSpot($dragTile, $dropTile) {
    var game_spot = {
       tile: null,
@@ -359,6 +380,7 @@ function recordSpot($dragTile, $dropTile) {
    used_tiles.push(game_spot);
 }
 
+//Ends the turn
 function endTurn() {
    updateScore();
 
@@ -373,6 +395,7 @@ function endTurn() {
 
 }
 
+//Recursively check beyond the given square for a certain direction until reaching an empty spot. Add every letter until then.
 function checkBeyondRight($last_drop, allowed) {
    var result = $.grep(used_tiles, function (e) {
       return e.spot === (right($last_drop));
@@ -387,6 +410,7 @@ function checkBeyondRight($last_drop, allowed) {
    return;
 }
 
+//Recursively check beyond the given square for a certain direction until reaching an empty spot. Add every letter until then.
 function checkBeyondLeft($last_drop, allowed) {
    var result = $.grep(used_tiles, function (e) {
       return e.spot === (left($last_drop));
@@ -401,6 +425,7 @@ function checkBeyondLeft($last_drop, allowed) {
    return;
 }
 
+//Recursively check beyond the given square for a certain direction until reaching an empty spot. Add every letter until then.
 function checkBeyondUp($last_drop, allowed) {
    var result = $.grep(used_tiles, function (e) {
       return e.spot === (up($last_drop));
@@ -415,6 +440,7 @@ function checkBeyondUp($last_drop, allowed) {
    return;
 }
 
+//Recursively check beyond the given square for a certain direction until reaching an empty spot. Add every letter until then.
 function checkBeyondDown($last_drop, allowed) {
    var result = $.grep(used_tiles, function (e) {
       return e.spot === (down($last_drop));
@@ -429,6 +455,7 @@ function checkBeyondDown($last_drop, allowed) {
    return;
 }
 
+//Event Listener
 document.getElementById("End_Turn").addEventListener("click", function () {
    endTurn();
 });
