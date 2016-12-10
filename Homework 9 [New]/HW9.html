@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--File: Homework 9/HW.html
+Denzel Pierre - Denzel_Pierre@student.uml.edu
+UMASS Lowell Computer Science
+COMP 4610-201 - GUI Programming I
+Assignment 9: Implementing a Bit of Scrabble with Drag-and-Drop
+Created on 28 November 2016, 6:52PM
+Updated on 04 December 2016, 8:58PM - Added Drag & Drop functionality
+Updated on 06 December 2016, 12:29PM - Changed div to Jquery Elements.
+-->
+
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <!--Tells IE to display the webpage in the highest mode available-->
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!--To ensure proper rendering and touch zooming-->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Assignment 9</title>
+
+
+   <link rel="stylesheet" href="board.css" />
+
+
+</head>
+
+<body>
+   <p id="messages"></p>
+   <div id="game-info"></div>
+   <div id="buttons">
+      <button id="End_Turn">End Turn</button>
+   </div>
+   <div id="chessBoard"></div>
+
+   <!--Javascript-->
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src="tiles.js"></script>
+   <script src="board.js"></script>
+   <script src="game.js"></script>
+   <script src="bag.js"></script>
+   <script src="drag-and-drop.js"></script>
+</body>
+
+</html>
